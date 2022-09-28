@@ -96,13 +96,14 @@
             </div>
         </header>
         <script>
-            const gameID = parseInt(window.location.search.substring(1));
+            const params = new Proxy(new URLSearchParams(window.location.search), {
+                get: (searchParams, prop) => searchParams.get(prop),
+            });
+            const gameID = parseInt(params.gameid);
             if (gameID < 1) {
                 window.location.replace('/games.html');
             }
-            console.log(gameID);
             const gameIndex = PRODUCTS.findIndex((x) => x.id === gameID);
-            console.log(gameIndex);
             const game = PRODUCTS[gameIndex];
 
             document.title = `${game.title} | Gamehub - The universe of games`;
@@ -146,7 +147,7 @@
                 document.write(`
                     "></i> ${game.stock} in stock</p>
                 </div>
-                <button class="btn primary add-to-cart">Add to cart</button>
+                <button class="btn primary add-to-cart" data-gameid="${game.id}">Add to cart</button>
               </div> <!-- end buy-product-->
               <div class="game-info">
                 <table>

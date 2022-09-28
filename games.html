@@ -103,13 +103,13 @@
                         PRODUCTS.map((product) =>
                             document.write(`
             <li class="product__card">
-            <a aria-hidden="true" href="/game.html?${product.id}"
+            <a aria-hidden="true" href="/game.html?gameid=${product.id}"
               ><img
                 class="product__image"
                 src=${product.image}
                 alt=""
             /></a>
-            <a href="/game.html?${product.id}">
+            <a href="/game.html?gameid=${product.id}">
               <div class="flex flex-center">
               <h3 class="product__title">${product.title}</h3></a>
               <label class="wishlist-label">
@@ -137,7 +137,7 @@
               </label>
             </div>
             <p class="product__price">${product.price} kr</p>
-            <button class="add-to-cart" onclick="(e) => addToBasket(e)">
+            <button class="add-to-cart" data-gameid="${product.id}">
               Add to basket
             </button>
             </li>
