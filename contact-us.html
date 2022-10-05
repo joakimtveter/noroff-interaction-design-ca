@@ -14,7 +14,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
         <link rel="stylesheet" href="./styles/main.css" />
-        <script src="./scripts/main.js" defer></script>
+        <script src="./scripts/main.js" type="module" defer></script>
+        <script src="./scripts/contact.js" type="module" defer></script>
         <!-- Hotjar Tracking Code for https://noroff-interaction-design-ca.netlify.app -->
         <script>
             (function (h, o, t, j, a, r) {
@@ -143,10 +144,12 @@
                     <div class="form-control">
                         <label for="name">Name:</label>
                         <input type="text" id="name" autocomplete="name" required />
+                        <p id="name-error" class="error-message"></p>
                     </div>
                     <div class="form-control">
                         <label for="email">Email: </label>
-                        <input type="email" autocomplete="email" required />
+                        <input type="email" id="email" autocomplete="email" required />
+                        <p id="email-error" class="error-message"></p>
                     </div>
                     <div class="form-control">
                         <label for="reason">Contact regarding: </label>
@@ -157,19 +160,22 @@
                             <option value="returns">Return of items</option>
                             <option value="other">Other</option>
                         </select>
+                        <p id="reason-error" class="error-message"></p>
                     </div>
                     <div class="form-control">
                         <label for="message">Message:</label>
                         <textarea name="message" id="message" resize></textarea>
+                        <p id="message-error" class="error-message"></p>
                     </div>
                     <div class="terms">
-                        <input type="checkbox" id="terms" />
+                        <input type="checkbox" id="terms" name="terms" />
                         <label for="terms">
                             I agree to let Gamehub handle my data in accordance with the
                             <a href="/terms-amd-conditions">terms and conditions</a>.
                         </label>
                     </div>
-                    <button class="btn btn-primary" type="submit">Send message</button>
+                    <p id="terms-error" class="error-message"></p>
+                    <button id="submit" class="btn btn-primary" type="submit">Send message</button>
                 </form>
             </div>
         </main>
