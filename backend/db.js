@@ -160,27 +160,3 @@ const PRODUCTS = [
         stock: 5,
     },
 ];
-
-const USERS = [
-    {
-        id: 1,
-        email: 'joakim2@example.com',
-        name: 'Joakim Tveter',
-        password: '12345',
-        avatar: '',
-    },
-    {
-        id: 2,
-        email: 'ole@example.com',
-        name: 'Ole Olsen',
-        password: '12345',
-        avatar: '',
-    },
-    {
-        id: 3,
-        email: 'kari@example.com',
-        name: 'Kari Hansen',
-        password: '12345',
-        avatar: '',
-    },
-];
