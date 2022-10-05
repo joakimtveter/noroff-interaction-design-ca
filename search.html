@@ -12,10 +12,7 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-
         <link rel="stylesheet" href="./styles/main.css" />
-        <script src="./scripts/main.js" type="module" defer></script>
-        <script src="./backend/db.js"></script>
         <!-- Hotjar Tracking Code for https://noroff-interaction-design-ca.netlify.app -->
         <script>
             (function (h, o, t, j, a, r) {
@@ -97,89 +94,7 @@
         </header>
         <main id="main-content" class="main-content cwc">
             <h1>Search Results</h1>
-            <script>
-                const term = window.location.search.substring(3).replace(/\+/g, ' ');
-                document.title = `Search results for ${term} | Gamehub - The universe of games`;
-                document.querySelector('#searchbox').setAttribute('value', term);
-
-                let searchResults = PRODUCTS.filter(function (game) {
-                    return game.title.toLowerCase().indexOf(term.toLowerCase()) !== -1;
-                });
-                document.write(
-                    `<p>Your search for "${term}" gave ${searchResults.length} results...</p>
-            <div id="search-result">
-              <ul class="search-results">
-          `
-                );
-                if (searchResults.length > 0) {
-                    searchResults.map((result) => {
-                        document.write(`
-              <li>
-                <div class="card-large">
-                  <img class="product-image" src="${result.image}" alt="${result.title} cover" />
-                  <div class="card-body">
-                    <div class="flex flex-center">
-                    <a href="/game.html?${result.id}"><h2 class="title">${result.title}</h2></a>
-                    <label class="wishlist-label">
-                      <input
-                        class="wishlist-checkbox"
-                        type="checkbox"
-                        name="wishlist-checkbox"
-                      />
-                      <svg
-                        class="wishlist-toggle"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512.05 448.77"
-                      >
-                        <path
-                          class="wishlist-toggle-full"
-                          d="M458.35,65c-57.8-48.6-147.1-41.3-202.4,15-55.3-56.3-144.6-63.7-202.4-15-75.2,63.3-64.2,166.5-10.6,221.2l175.4,178.7a52.52,52.52,0,0,0,75.2.1L469,286.25C522.45,231.55,533.65,128.35,458.35,65Z"
-                          transform="translate(0.05 -31.98)"
-                        />
-                        <path
-                          class="wishlist-toggle-line"
-                          d="M458.4,64.3C400.6,15.7,311.3,23,256,79.3,200.7,23,111.4,15.6,53.6,64.3-21.6,127.6-10.6,230.8,43,285.5L218.4,464.2a52.52,52.52,0,0,0,75.2.1L469,285.6C522.5,230.9,533.7,127.7,458.4,64.3ZM434.8,251.8,259.4,430.5c-2.4,2.4-4.4,2.4-6.8,0L77.2,251.8c-36.5-37.2-43.9-107.6,7.3-150.7,38.9-32.7,98.9-27.8,136.5,10.5l35,35.7,35-35.7c37.8-38.5,97.8-43.2,136.5-10.6,51.1,43.1,43.5,113.9,7.3,150.8Z"
-                          transform="translate(0.05 -31.98)"
-                        />
-                      </svg>
-                    </label>
-                    </div>
-                    <div class="reviews">
-                      <div class="review-container">
-                        <div class="rating-stars" style="--rating: ${result.rating}" aria-label="${result.title} has a rating of ${result.rating} out of 5."></div>
-                        <div class="rating">${result.rating}</div>
-                      </div>
-                      <a href="/review.html?${result.id}">Write a review</a>
-                    </div>
-                    <p>${result.desciption}</p>
-                  </div>
-                  <div class="buy-product">
-                    <div class="price-stock">
-                      <p class="price">${result.price} kr</p>
-                      <p class="stock"><i class="fas fa-box stock-indicator `);
-                        if (result.stock < 3 && result.stock != 0) {
-                            document.write(`warning`);
-                        }
-                        if (result.stock <= 0) {
-                            document.write(`danger`);
-                        }
-                        document.write(`
-                                "></i> ${result.stock} in stock</p>
-                      </div>
-                      <button class="btn primary add-to-cart" data-product-id="${result.id}">Add to cart</button>
-                    </div>
-                  </div>
-              </li>
-              `);
-                    });
-                }
-            </script>
-            <script>
-                document.write(`
-                        </ul>
-                        </div>
-            `);
-            </script>
+            <div id="search-results"></div>
             <div>
                 <p>Did you find what you where searching for? <a href="/games.html">Browse our games</a>.</p>
             </div>
@@ -236,5 +151,6 @@
                 </nav>
             </div>
         </footer>
+        <script type="module" src="./scripts/main.js"></script>
     </body>
 </html>

@@ -160,3 +160,5 @@ const PRODUCTS = [
         stock: 5,
     },
 ];
+
+export { PRODUCTS };
