@@ -39,13 +39,14 @@
                     </a>
                     <a class="sr-only sr-only-focusable" href="#main-content">Skip to main content</a>
                 </div>
-                <button aria-label="Open Menu" class="hamburger" onclick="openMenu()">
+                <button aria-label="Open Menu" class="hamburger">
                     <i class="fas fa-bars" aria-hidden="true"></i>
                     <span class="sr-only">Open menu</span>
                 </button>
                 <div id="mobile-menu" class="mobile-menu">
                     <div class="header-top-row">
                         <form role="search" class="search" action="/search.html" method="GET">
+                            <label for="search" class="sr-only">Search</label>
                             <input id="searchbox" type="search" name="q" role="searchbox" />
                             <button aria-label="Submit Search" class="btn-search" type="submit">
                                 <i class="fas fa-search fa-2l" aria-hidden="true"></i>
@@ -76,8 +77,8 @@
                             </a>
                         </div>
                     </div>
-                    <nav class="main-nav">
-                        <ul>
+                    <nav class="main-nav" aria-label="main">
+                        <ul role="list">
                             <li class="main-nav__item">
                                 <a href="/games.html" class="main-nav__link">Purchase Games</a>
                             </li>
@@ -86,7 +87,7 @@
                             </li>
                         </ul>
                     </nav>
-                    <button aria-label="Close Menu" class="hamburger-close" onclick="closeMenu()">
+                    <button aria-label="Close Menu" class="hamburger-close">
                         <i class="far fa-times-circle" aria-hidden="true"></i><span class="sr-only">Close Menu</span>
                     </button>
                 </div>
@@ -202,8 +203,8 @@
                     <!-- end some-links -->
                 </div>
                 <!-- end footer-branding -->
-                <nav class="footer-nav">
-                    <ul>
+                <nav class="footer-nav" aria-label="footer">
+                    <ul role="list">
                         <li class="footer-nav__item">
                             <a href="/account.html" class="footer-nav__link">My Account</a>
                         </li>

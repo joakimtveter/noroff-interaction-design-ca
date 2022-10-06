@@ -34,9 +34,26 @@ function enableWishlistButtons() {
     });
 }
 
+function productImageEventlistner() {
+    document.querySelectorAll('.product__image').forEach((img) => {
+        img.addEventListener('click', (e) => {
+            handleImageClicks(e);
+        });
+    });
+
+    document.querySelectorAll('.product-image').forEach((img) => {
+        img.addEventListener('click', (e) => {
+            handleImageClicks(e);
+        });
+    });
+}
+
 // HANDLER FUNCTIONS
 function handleUpdateCartQty(e) {
     updateCartQty(+e.target.attributes['data-gameid'].value, +e.target.value);
+}
+function handleImageClicks(e) {
+    window.open(`/game.html?gameid=${e.target.dataset.gameid}`, '_self');
 }
 
 // RENDER FUNCTIONS
@@ -117,6 +134,7 @@ function renderWishlistItems() {
                     class="product-image"
                     src="${product.image}"
                     alt="${product.title} Cover"
+                    data-gameid="${product.id}"
                 />
                 <div class="card-body">
                     <div class="flex flex-center">
@@ -478,5 +496,6 @@ if (currentLocation === '/game.html') {
 enableMenuButtons();
 enableAddToCartButtons();
 enableWishlistButtons();
+productImageEventlistner();
 updateCartBadge();
 updateWishlistBadge();

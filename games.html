@@ -46,6 +46,7 @@
                 <div id="mobile-menu" class="mobile-menu">
                     <div class="header-top-row">
                         <form role="search" class="search" action="/search.html" method="GET">
+                            <label for="search" class="sr-only">Search</label>
                             <input id="searchbox" type="search" name="q" role="searchbox" />
                             <button aria-label="Submit Search" class="btn-search" type="submit">
                                 <i class="fas fa-search fa-2l" aria-hidden="true"></i>
@@ -76,8 +77,8 @@
                             </a>
                         </div>
                     </div>
-                    <nav class="main-nav">
-                        <ul>
+                    <nav class="main-nav" aria-label="main">
+                        <ul role="list">
                             <li class="main-nav__item">
                                 <a href="/games.html" class="main-nav__link active">Purchase Games</a>
                             </li>
@@ -129,8 +130,8 @@
                     <!-- end some-links -->
                 </div>
                 <!-- end footer-branding -->
-                <nav class="footer-nav">
-                    <ul>
+                <nav class="footer-nav" aria-label="footer">
+                    <ul role="list">
                         <li class="footer-nav__item">
                             <a href="/account.html" class="footer-nav__link">My Account</a>
                         </li>

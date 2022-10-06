@@ -943,6 +943,11 @@ input[type='text'] {
     gap: 2rem;
 }
 
+.product__image,
+.product-image {
+    cursor: pointer;
+}
+
 .product__card a {
     text-decoration: none;
 }
