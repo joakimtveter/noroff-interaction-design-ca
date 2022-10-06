@@ -3,6 +3,7 @@ import { PRODUCTS } from '../backend/db.js';
 
 const currentLocation = window.location.pathname;
 
+// ENABLE BUTTONS WITH EVENTLISTENERS
 function enableMenuButtons() {
     document.querySelectorAll('.hamburger').forEach((button) => {
         button.addEventListener('click', (e) => {
@@ -33,6 +34,12 @@ function enableWishlistButtons() {
     });
 }
 
+// HANDLER FUNCTIONS
+function handleUpdateCartQty(e) {
+    updateCartQty(+e.target.attributes['data-gameid'].value, +e.target.value);
+}
+
+// RENDER FUNCTIONS
 function renderCartItems() {
     let cartContent = JSON.parse(sessionStorage.getItem('cart'));
     const cart = document.getElementById('cart-body');
@@ -146,8 +153,6 @@ function renderWishlistItems() {
     });
     updateWishlistBadge();
     wishlistContainer.innerHTML = wishlistItems;
-    enableWishlistButtons();
-    enableAddToCartButtons();
 }
 
 function uptateSearchPageTitleAndSearchBox() {
@@ -212,8 +217,6 @@ function renderSearchResults() {
         searchResultsHTML += '</ul>';
     }
     searchResultsContainer.innerHTML = searchResultsHTML;
-    enableAddToCartButtons();
-    enableWishlistButtons();
 }
 
 function renderGames() {
@@ -342,14 +345,9 @@ function renderSingleGame() {
     </div> <!-- product body -->`;
 
     gameContainer.innerHTML = gameHTML;
-    enableAddToCartButtons();
-    enableWishlistButtons();
 }
 
-function handleUpdateCartQty(e) {
-    updateCartQty(+e.target.attributes['data-gameid'].value, +e.target.value);
-}
-
+// UTILITY FUNCTIONS
 function updateCartBadge() {
     const indicator = document.getElementById('basket-indicator');
     let itemsInCart = 0;
@@ -460,12 +458,7 @@ function closeMenu() {
     mobileMenu.classList.remove('active');
 }
 
-// On Load render cart content if on cart page
-enableMenuButtons();
-enableAddToCartButtons();
-enableWishlistButtons();
-updateCartBadge();
-updateWishlistBadge();
+// INVOKE THE PAGE RELATED FUNCTIONS
 if (currentLocation === '/basket.html') {
     renderCartItems();
 }
@@ -482,3 +475,8 @@ if (currentLocation === '/games.html') {
 if (currentLocation === '/game.html') {
     renderSingleGame();
 }
+enableMenuButtons();
+enableAddToCartButtons();
+enableWishlistButtons();
+updateCartBadge();
+updateWishlistBadge();
