@@ -99,6 +99,7 @@ function renderCartItems() {
               <h2 class="title">${product?.title}</h2>
           </td>
           <td class="product-qty-cell">
+                <label for="qty-${item?.id}" class="sr-only">Quantity</label>
               <input 
                 id="qty-${item?.id}" 
                 class="cart-qty"
@@ -261,12 +262,12 @@ function renderGames() {
     PRODUCTS.map((product) => {
         gamesHTML += `
         <li class="product__card">
-            <a aria-hidden="true" href="/game.html?gameid=${product.id}"
-              ><img
+            <img
                 class="product__image"
                 src=${product.image}
                 alt=""
-            /></a>
+                data-gameid="${product.id}"
+            />
             <a href="/game.html?gameid=${product.id}">
               <div class="flex flex-center">
               <h3 class="product__title">${product.title}</h3>

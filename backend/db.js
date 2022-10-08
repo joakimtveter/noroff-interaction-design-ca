@@ -1,4 +1,4 @@
-const PRODUCTS = [
+export const PRODUCTS = [
     {
         id: 1,
         title: 'Ping Pong Championship',
@@ -160,5 +160,3 @@ const PRODUCTS = [
         stock: 5,
     },
 ];
-
-export { PRODUCTS };
