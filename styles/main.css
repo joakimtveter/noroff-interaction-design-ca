@@ -988,7 +988,7 @@ body#page-not-found {
 /* FRONT PAGE  */
 
 #front-page .jumbotron {
-    background-image: url('../assets/images/keys.jpg');
+    background-image: url('../assets/images/keys.webp');
     background-blend-mode: overlay;
 }
 
@@ -1124,6 +1124,10 @@ body#page-not-found {
     vertical-align: top;
 }
 
+.basket-items tr {
+    padding: 3px 0;
+}
+
 .basket-items td {
     vertical-align: top;
 }
@@ -1137,12 +1141,42 @@ body#page-not-found {
     padding: 0.25rem;
 }
 
+.product-qty-cell {
+    width: 65px;
+}
+
+.product-price-cell {
+    width: 65px;
+}
+
+.product-total-cell {
+    width: 65px;
+}
+
+.product-delete-cell {
+    width: 30px;
+}
+
 .basket-items input[type='number'] {
     width: 3em;
 }
 
 .basket-footer {
     background-color: var(--color-secondary);
+}
+
+.remove-from-cart-btn {
+    border: none;
+    background: transparent;
+}
+
+.remove-from-cart-btn svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.remove-from-cart-btn path {
+    fill: var(--color-white);
 }
 
 /* CONTACT US PAGE */
@@ -1209,9 +1243,19 @@ body#page-not-found {
     display: none;
 }
 
-/* @media (max-width: 45rem) { *
-  /* small screens */
-/* } */
+@media (max-width: 45rem) {
+    /* small screens */
+    .product-image-cell {
+        display: none;
+    }
+
+    .product-qty-cell,
+    .product-price-cell,
+    .product-total-cell,
+    .product-delete-cell {
+        width: min-content;
+    }
+}
 
 @media (min-width: 45.05rem) {
     /* medium screens */

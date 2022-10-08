@@ -21,7 +21,15 @@ function enableMenuButtons() {
 function enableAddToCartButtons() {
     document.querySelectorAll('.add-to-cart').forEach((button) => {
         button.addEventListener('click', (e) => {
-            addToCart(parseInt(e.target.dataset.gameid));
+            addToCart(parseInt(e.target.dataset.gameid), true);
+        });
+    });
+}
+
+function enableRemoveFromCartButtons() {
+    document.querySelectorAll('.remove-from-cart-btn').forEach((button) => {
+        button.addEventListener('click', (e) => {
+            removeFromCart(parseInt(e.currentTarget.dataset.gameid), true);
         });
     });
 }
@@ -50,6 +58,7 @@ function productImageEventlistner() {
 
 // HANDLER FUNCTIONS
 function handleUpdateCartQty(e) {
+    if (e.target.value === '') return;
     updateCartQty(+e.target.attributes['data-gameid'].value, +e.target.value);
 }
 function handleImageClicks(e) {
@@ -73,13 +82,12 @@ function renderCartItems() {
         checkOutBtn.classList.add('disabled');
         return;
     }
-    console.log(cartContent);
     cartContent.forEach((item) => {
         const product = PRODUCTS.find((p) => p.id === item.id);
         cartTotal += product.price * item.quantity;
         cartItems += `
         <tr>
-          <td>
+          <td class="product-image-cell">
               <img
               class="product-image"
               src="${product?.image}"
@@ -87,22 +95,31 @@ function renderCartItems() {
               height="150"
               />
           </td>
-          <td>
+          <td class="product-item-cell">
               <h2 class="title">${product?.title}</h2>
           </td>
-          <td>
+          <td class="product-qty-cell">
               <input 
                 id="qty-${item?.id}" 
                 class="cart-qty"
                 type="number" 
                 name="qty" 
-                min="0" 
+                min="0"
+                max="99" 
                 value="${item?.quantity}" 
                 data-gameid="${item?.id}"
               />
           </td>
-          <td>${product?.price} kr</td>
-          <td>${product?.price * item?.quantity} kr</td>
+          <td class="product-price-cell">${product?.price} kr</td>
+          <td class="product-total-cell">${product?.price * item?.quantity} kr</td>
+          <td class="product-delete-cell">
+            <button class="remove-from-cart-btn" data-gameid="${product?.id}">
+                <span class="sr-only">Remove ${product?.title} from the cart</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>
+                </svg>
+            </button>
+          </td>
         </tr>
         `;
         cart.innerHTML = cartItems;
@@ -145,6 +162,7 @@ function renderWishlistItems() {
                             <div
                                 class="rating-stars"
                                 style="--rating: ${product.rating}"
+                                role="tooltip"
                                 aria-label="${product.title} has a rating of ${product.rating} out of 5."
                             ></div>
                             <div class="rating">${product.rating}</div>
@@ -207,7 +225,7 @@ function renderSearchResults() {
                         </div>
                         <div class="reviews">
                             <div class="review-container">
-                                <div class="rating-stars" style="--rating: ${result.rating}" aria-label="${result.title} has a rating of ${result.rating} out of 5."></div>
+                                <div class="rating-stars" style="--rating: ${result.rating}" role="tooltip" aria-label="${result.title} has a rating of ${result.rating} out of 5."></div>
                                 <div class="rating">${result.rating}</div>
                             </div>
                             <a href="/review.html?${result.id}">Write a review</a>
@@ -300,7 +318,7 @@ function renderSingleGame() {
         </div>
         <div class="reviews">
             <div class="review-container">
-            <div class="rating-stars" style="--rating: ${game.rating}" aria-label="${game.title} has a rating of ${game.rating} out of 5."></div>
+            <div class="rating-stars" style="--rating: ${game.rating}" role="tooltip" aria-label="${game.title} has a rating of ${game.rating} out of 5."></div>
             <div class="rating">${game.rating}</div>
         </div>
             <a href="/review.html">Write a review</a>
@@ -479,6 +497,7 @@ function closeMenu() {
 // INVOKE THE PAGE RELATED FUNCTIONS
 if (currentLocation === '/basket.html') {
     renderCartItems();
+    enableRemoveFromCartButtons();
 }
 if (currentLocation === '/wishlist.html') {
     renderWishlistItems();

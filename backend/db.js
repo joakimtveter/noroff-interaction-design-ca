@@ -12,7 +12,7 @@ const PRODUCTS = [
         relaseDate: '2020-12-15',
         desciption:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, sint ea? Similique, saepe inventore neque reiciendis possimus eveniet quos quidem recusandae atque perspiciatis, eum nemo!',
-        image: './assets/product-images/GameHub_covers.jpg',
+        image: './assets/product-images/GameHub_covers.webp',
         stock: 15,
     },
     {
@@ -28,7 +28,7 @@ const PRODUCTS = [
         relaseDate: '2020-12-15',
         desciption:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, sint ea? Similique, saepe inventore neque reiciendis possimus eveniet quos quidem recusandae atque perspiciatis, eum nemo!',
-        image: './assets/product-images/GameHub_covers2.jpg',
+        image: './assets/product-images/GameHub_covers2.webp',
         stock: 3,
     },
     {
@@ -44,7 +44,7 @@ const PRODUCTS = [
         relaseDate: '2020-12-15',
         desciption:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, sint ea? Similique, saepe inventore neque reiciendis possimus eveniet quos quidem recusandae atque perspiciatis, eum nemo!',
-        image: './assets/product-images/GameHub_covers3.jpg',
+        image: './assets/product-images/GameHub_covers3.webp',
         stock: 25,
     },
     {
@@ -60,7 +60,7 @@ const PRODUCTS = [
         relaseDate: '2020-12-15',
         desciption:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, sint ea? Similique, saepe inventore neque reiciendis possimus eveniet quos quidem recusandae atque perspiciatis, eum nemo!',
-        image: './assets/product-images/GameHub_covers4.jpg',
+        image: './assets/product-images/GameHub_covers4.webp',
         stock: 12,
     },
     {
@@ -76,7 +76,7 @@ const PRODUCTS = [
         relaseDate: '2020-12-15',
         desciption:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, sint ea? Similique, saepe inventore neque reiciendis possimus eveniet quos quidem recusandae atque perspiciatis, eum nemo!',
-        image: './assets/product-images/GameHub_covers5.jpg',
+        image: './assets/product-images/GameHub_covers5.webp',
         stock: 23,
     },
     {
@@ -92,7 +92,7 @@ const PRODUCTS = [
         relaseDate: '2020-12-15',
         desciption:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, sint ea? Similique, saepe inventore neque reiciendis possimus eveniet quos quidem recusandae atque perspiciatis, eum nemo!',
-        image: './assets/product-images/GameHub_covers6.jpg',
+        image: './assets/product-images/GameHub_covers6.webp',
         stock: 35,
     },
     {
@@ -108,7 +108,7 @@ const PRODUCTS = [
         relaseDate: '2020-12-15',
         desciption:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, sint ea? Similique, saepe inventore neque reiciendis possimus eveniet quos quidem recusandae atque perspiciatis, eum nemo!',
-        image: './assets/product-images/GameHub_covers7.jpg',
+        image: './assets/product-images/GameHub_covers7.webp',
         stock: 23,
     },
     {
@@ -124,7 +124,7 @@ const PRODUCTS = [
         relaseDate: '2020-12-15',
         desciption:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, sint ea? Similique, saepe inventore neque reiciendis possimus eveniet quos quidem recusandae atque perspiciatis, eum nemo!',
-        image: './assets/product-images/GameHub_covers8.jpg',
+        image: './assets/product-images/GameHub_covers8.webp',
         stock: 1,
     },
     {
@@ -140,7 +140,7 @@ const PRODUCTS = [
         relaseDate: '2020-12-15',
         desciption:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, sint ea? Similique, saepe inventore neque reiciendis possimus eveniet quos quidem recusandae atque perspiciatis, eum nemo!',
-        image: './assets/product-images/GameHub_covers9.jpg',
+        image: './assets/product-images/GameHub_covers9.webp',
         stock: 0,
     },
     {
@@ -156,7 +156,7 @@ const PRODUCTS = [
         relaseDate: '2020-12-15',
         desciption:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, sint ea? Similique, saepe inventore neque reiciendis possimus eveniet quos quidem recusandae atque perspiciatis, eum nemo!',
-        image: './assets/product-images/GameHub_covers10.jpg',
+        image: './assets/product-images/GameHub_covers10.webp',
         stock: 5,
     },
 ];
