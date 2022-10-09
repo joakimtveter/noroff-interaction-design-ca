@@ -930,7 +930,6 @@ input[type='text'] {
 
 @media (min-width: 45.05rem) {
     label.short {
-        margin-left: 15px;
         width: 50px;
     }
     input.short {
@@ -942,9 +941,6 @@ input[type='text'] {
     }
     .form-control label {
         width: 145px;
-    }
-    .form-control .no-label {
-        margin-left: 145px;
     }
 }
 
@@ -971,6 +967,7 @@ input[type='text'] {
     color: var(--color-white);
     text-decoration: none;
     margin: 0;
+    text-align: left;
 }
 
 .product__header {

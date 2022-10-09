@@ -109,20 +109,27 @@
                 </div>
                 <div class="form-control">
                     <label for="address">Address:</label>
-                    <input id="address" type="text" name="address" required />
+                    <input id="address" type="text" name="address" autocomplete="address-line1" required />
                 </div>
                 <div class="form-control">
-                    <input id="address" class="no-label" type="text" name="address2" />
+                    <input id="address2" class="no-label" type="text" name="address2" autocomplete="address-line2" />
                 </div>
                 <div class="form-control">
                     <label for="postal-code">Postal Code:</label>
-                    <input class="short" id="postal-code" type="text" name="postal-code" required />
+                    <input
+                        class="short"
+                        id="postal-code"
+                        type="text"
+                        name="postal-code"
+                        autocomplete="postal-code"
+                        required
+                    />
                     <label class="short" for="city">City:</label>
-                    <input class="medium" id="city" type="text" name="city" required />
+                    <input class="medium" id="city" type="text" name="city" autocomplete="address-level1" required />
                 </div>
                 <div class="form-control">
                     <label for="country">Country:</label>
-                    <input id="country" type="text" name="country" required />
+                    <input id="country" type="text" name="country" autocomplete="country-name" required />
                 </div>
                 <h2>Payment details</h2>
                 <div class="radio-group">
@@ -137,17 +144,17 @@
                 </div>
                 <div class="form-control">
                     <label for="card-number">Card no.:</label>
-                    <input id="card-number" type="text" name="card-number" required />
+                    <input id="card-number" type="text" name="card-number" autocomplete="cc-number" required />
                 </div>
                 <div class="form-control">
                     <label for="expires">Expires:</label>
-                    <input class="short" id="expires" type="text" name="expires" required />
+                    <input class="short" id="expires" type="text" name="expires" autocomplete="cc-exp" required />
                     <label class="short" for="csv">CSV:</label>
-                    <input class="short" id="csv" type="text" name="csc" required />
+                    <input class="short" id="csv" type="text" name="csc" autocomplete="cc-csc" required />
                 </div>
                 <div class="form-control">
                     <label for="cardholder-name">Cardholder name:</label>
-                    <input id="cardholder-name" type="text" name="cardholder-name" required />
+                    <input id="cardholder-name" type="text" name="cardholder-name" autocomplete="cc-name" required />
                 </div>
                 <div class="form-control form-control-btns">
                     <a class="mia" href="/basket.html">Back to basket</a>
