@@ -127,6 +127,9 @@ a:focus-visible {
     display: flex;
     gap: 0.5em;
 }
+.flex.space-between {
+    justify-content: space-between;
+}
 
 .flex-center {
     align-items: center;
@@ -642,21 +645,27 @@ input[type='radio']:checked ~ .radio-pill {
 /* Wishlist toggle */
 
 .wishlist-btn {
-    position: relative;
     border: none;
     background: transparent;
+    margin: 0;
 }
 
 .wishlist-btn svg > path.wishlist-toggle-full {
     fill: transparent;
 }
 
+.wishlist-btn:hover svg > path.wishlist-toggle-full {
+    fill: var(--color-accent);
+    opacity: 0.75;
+}
+
 .wishlist-btn svg > path.wishlist-toggle-line,
 .wishlist-btn[data-active='true'] svg > path.wishlist-toggle-full {
     fill: var(--color-accent);
 }
+
 .wishlist-toggle {
-    height: 2.25em;
+    height: 1.75em;
     left: 0;
     bottom: 0;
     pointer-events: none;
@@ -683,6 +692,12 @@ input[type='radio']:checked ~ .radio-pill {
     padding: 0.5em;
     border-radius: 2.25em;
 }
+.review-container.dark {
+    --star-color: var(--color-secondary);
+    --star-background: var(--color-accent);
+    background-color: var(--color-primary);
+}
+
 .rating {
     color: var(--color-accent);
     margin-inline-end: 0.25em;
@@ -955,7 +970,26 @@ input[type='text'] {
 .product__title {
     color: var(--color-white);
     text-decoration: none;
+    margin: 0;
 }
+
+.product__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product__price {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.product__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .add-to-cart {
     border: none;
     color: var(--color-primary);
@@ -964,6 +998,7 @@ input[type='text'] {
     padding-inline: 0.75em;
     border-radius: 5px;
     margin-block: 0.5rem;
+    margin-inline: 0;
 }
 
 .add-to-cart:hover,
@@ -1061,7 +1096,6 @@ body#page-not-found {
 #single-game .buy-product {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 3rem;
     margin-block: 3rem;
